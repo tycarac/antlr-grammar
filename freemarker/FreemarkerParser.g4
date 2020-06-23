@@ -64,7 +64,7 @@ interpolation
 expression
     // Operator Precedence https://freemarker.apache.org/docs/dgui_template_exp.html#dgui_template_exp_precedence
     : variable | literal
-    | variable (OPER_DOT variable)+
+    | variable (OPER_DOT (variable| builtin))+
     | expression (OPER_QUESTION builtin)+
     | expression OPER_BANG (value)?
     | expression (OPER_PLUS | OPER_MODULUS) expression 
@@ -75,7 +75,7 @@ sequence
     ;
 
 builtin
-    : OPER_DOT? IDENTIFIER (OPER_L_PAREN parameterList? OPER_R_PAREN)?
+    : IDENTIFIER (OPER_L_PAREN parameterList? OPER_R_PAREN)?
     ;
 
 methodCall
