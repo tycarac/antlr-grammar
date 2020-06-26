@@ -7,7 +7,7 @@ options { tokenVocab=FreemarkerLexer; }
     https://freemarker.apache.org/docs/ref_directive_alphaidx.html
 */
 
-template 
+root 
     : (tag | interpolation | content)* EOF
     ;
 
